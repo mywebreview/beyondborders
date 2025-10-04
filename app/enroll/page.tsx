@@ -11,7 +11,7 @@ const enrollmentSchema = z.object({
   full_name: z.string().min(2, 'Full name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
   phone: z.string().min(10, 'Phone number must be at least 10 digits'),
-  country: z.enum(['UK', 'Canada'], { required_error: 'Please select a country' }),
+  country: z.enum(['UK', 'Canada']).refine((val) => val, { message: 'Please select a country' }),
   program: z.string().min(5, 'Please specify your program of interest'),
 })
 
