@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import crypto from 'crypto'
-import { supabase } from '@/lib/supabase'
+import { supabaseAdmin } from '@/lib/supabase/server'
 import { sendStudentConfirmation, sendAdminNotification } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: 'Missing enrollment ID' }, { status: 400 })
       }
       
-      const { data: enrollment, error: fetchError } = await supabase
+      const { data: enrollment, error: fetchError } = await supabaseAdmin
         .from('enrollments')
         .select('*')
         .eq('id', enrollmentId)
@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: 'Enrollment not found' }, { status: 404 })
       }
       
-      const { error: updateError } = await supabase
+      const { error: updateError } = await supabaseAdmin
         .from('enrollments')
         .update({
           payment_status: 'completed',
