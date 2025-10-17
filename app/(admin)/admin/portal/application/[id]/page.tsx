@@ -1,9 +1,13 @@
-// app/admin/applications/[id]/page.tsx
+// app/(admin)/admin/portal/application/[id]/page.tsx
 'use client'
 
 import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase/client'
+import { Database } from '@/lib/database.types'
+
+// Use the exact type from your database
+type ApplicationStatus = Database['public']['Tables']['applications']['Row']['status']
 
 interface Application {
     id: string
@@ -34,7 +38,7 @@ interface Application {
     visa_refused: boolean | null
     visa_refusal_reasons: string | null
     declaration_accepted: boolean | null
-    status: string
+    status: ApplicationStatus
     created_at: string
     submission_date: string | null
 }
@@ -128,12 +132,12 @@ export default function ApplicationDetails() {
         try {
             const { error } = await supabase
                 .from('applications')
-                .update({ status: newStatus })
+                .update({ status: newStatus as ApplicationStatus })
                 .eq('id', application.id)
 
             if (error) throw error
 
-            setApplication({ ...application, status: newStatus })
+            setApplication({ ...application, status: newStatus as ApplicationStatus })
         } catch (error) {
             console.error('Error updating status:', error)
             alert('Failed to update application status')
