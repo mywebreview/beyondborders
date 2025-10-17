@@ -65,6 +65,7 @@
     "zod": "^4.1.11"
   },
   "devDependencies": {
-    "@types/aos": "^3.0.7"
+    "@types/aos": "^3.0.7",
+    "supabase": "^2.51.0"
   }
 }

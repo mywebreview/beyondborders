@@ -3,6 +3,7 @@ import { CheckCircle } from 'lucide-react'
 
 interface CompletionStepProps {
     firstName: string
+    destinationCountry: string // Add this prop
     onBack: () => void
     onStartNew: () => void
 }

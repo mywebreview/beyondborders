@@ -11,9 +11,10 @@ interface DocumentsStepProps {
     data: Documents
     onNext: (data: Documents) => void
     onBack: () => void
+    isSubmitting?: boolean // Add this prop
 }
 
-export default function DocumentsStep({ data, onNext, onBack }: DocumentsStepProps) {
+export default function DocumentsStep({ data, onNext, onBack, isSubmitting = false }: DocumentsStepProps) {
     const [uploading, setUploading] = useState(false)
     const [uploadError, setUploadError] = useState('')
 
@@ -175,7 +176,7 @@ export default function DocumentsStep({ data, onNext, onBack }: DocumentsStepPro
                                     accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
                                     onChange={handleFileUpload}
                                     className="hidden"
-                                    disabled={uploading}
+                                    disabled={uploading || isSubmitting}
                                 />
                             </label>
                         </div>
@@ -230,6 +231,7 @@ export default function DocumentsStep({ data, onNext, onBack }: DocumentsStepPro
                                         size="sm"
                                         onClick={() => removeDocument(index)}
                                         className="text-red-600 hover:text-red-700"
+                                        disabled={isSubmitting}
                                     >
                                         <X size={16} />
                                     </Button>
@@ -240,15 +242,20 @@ export default function DocumentsStep({ data, onNext, onBack }: DocumentsStepPro
                 )}
 
                 <div className="flex justify-between pt-4">
-                    <Button type="button" variant="outline" onClick={onBack}>
+                    <Button
+                        type="button"
+                        variant="outline"
+                        onClick={onBack}
+                        disabled={isSubmitting}
+                    >
                         Back
                     </Button>
                     <Button
                         type="submit"
                         className="px-8"
-                        disabled={uploading || watchedDocuments.length === 0}
+                        disabled={uploading || watchedDocuments.length === 0 || isSubmitting}
                     >
-                        Next
+                        {isSubmitting ? 'Submitting...' : 'Submit Application'}
                     </Button>
                 </div>
             </form>
