@@ -60,7 +60,7 @@ export default function RefereeStep({ data, onNext, onBack }: RefereeStepProps) 
                     <Input
                         {...register('referee_phone')}
                         type="tel"
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="+234-080-1234-5678"
                         className={errors.referee_phone ? 'border-red-500' : ''}
                     />
                     {errors.referee_phone && (

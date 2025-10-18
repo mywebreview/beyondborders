@@ -59,7 +59,7 @@ export default function PersonalInfoStep({ data, onNext }: PersonalInfoStepProps
                     <Input
                         {...register('phone')}
                         type="tel"
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="+234-080-1234-5678"
                         className={errors.phone ? 'border-red-500' : ''}
                     />
                     {errors.phone && (

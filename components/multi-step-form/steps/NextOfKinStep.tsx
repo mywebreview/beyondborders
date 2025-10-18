@@ -60,7 +60,7 @@ export default function NextOfKinStep({ data, onNext, onBack }: NextOfKinStepPro
           <Input
             {...register('kin_phone')}
             type="tel"
-            placeholder="+1 (555) 123-4567"
+            placeholder="+234-080-1234-5678"
             className={errors.kin_phone ? 'border-red-500' : ''}
           />
           {errors.kin_phone && (

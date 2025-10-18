@@ -55,7 +55,7 @@ export default function AddressStep({ data, onNext, onBack }: AddressStepProps) 
                         <Label htmlFor="city">City *</Label>
                         <Input
                             {...register('city')}
-                            placeholder="New York"
+                            placeholder="Lagos"
                             className={errors.city ? 'border-red-500' : ''}
                         />
                         {errors.city && (
@@ -67,7 +67,7 @@ export default function AddressStep({ data, onNext, onBack }: AddressStepProps) 
                         <Label htmlFor="state">State/Region/Province *</Label>
                         <Input
                             {...register('state')}
-                            placeholder="New York"
+                            placeholder="Lagos"
                             className={errors.state ? 'border-red-500' : ''}
                         />
                         {errors.state && (
@@ -93,7 +93,7 @@ export default function AddressStep({ data, onNext, onBack }: AddressStepProps) 
                         <Label htmlFor="country">Country *</Label>
                         <Input
                             {...register('country')}
-                            placeholder="United States"
+                            placeholder="Nigeria"
                             className={errors.country ? 'border-red-500' : ''}
                         />
                         {errors.country && (
