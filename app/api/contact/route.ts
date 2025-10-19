@@ -11,17 +11,17 @@ export async function POST(request: NextRequest) {
         // Determine the from email based on destination preference
         let fromEmail = 'onboarding@resend.dev' // Default fallback
         if (destination === 'uk') {
-            fromEmail = process.env.RESEND_FROM_UK || 'uk.admission@prodoria.com'
+            fromEmail = process.env.RESEND_FROM_UK || 'uk@beyondbordersng.com'
         } else if (destination === 'canada') {
-            fromEmail = process.env.RESEND_FROM_CA || 'canada.admission@prodoria.com'
+            fromEmail = process.env.RESEND_FROM_CA || 'canada@beyondbordersng.com'
         } else {
-            fromEmail = 'prodoria@prodoria.com'
+            fromEmail = 'info@beyondbordersng.com'
         }
 
         // Send email to admin
         const { data, error } = await resend.emails.send({
-            from: `Beyond Borders Contact <${fromEmail}>`,
-            to: [process.env.ADMIN_EMAIL || 'prodoria@prodoria.com'],
+            from: `BeyondBorders Contact <${fromEmail}>`,
+            to: [process.env.ADMIN_EMAIL || 'info@beyondbordersng.com'],
             subject: `New Contact Form: ${subject}`,
             html: `
         <!DOCTYPE html>
@@ -70,7 +70,8 @@ export async function POST(request: NextRequest) {
                   <div class="value" style="white-space: pre-wrap;">${message}</div>
                 </div>
                 <div class="footer">
-                  <p>This message was sent from the Beyond Borders contact form.</p>
+                  <p>This message was sent from the BeyondBorders contact form.</p>
+                  <p>For complaint or enquires please send an email to support@beyondbordersng.com</p>
                   <p>Received at: ${new Date().toLocaleString()}</p>
                 </div>
               </div>

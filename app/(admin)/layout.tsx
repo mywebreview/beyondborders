@@ -76,7 +76,7 @@ export default function AdminLayout({
                             </svg>
                         </button>
                         <div>
-                            <h1 className="text-lg font-bold text-gray-900">StudyAbroad Admin</h1>
+                            <h1 className="text-lg font-bold text-gray-900">BeyondBorders</h1>
                             <p className="text-xs text-gray-600">Administration Portal</p>
                         </div>
                     </div>
@@ -111,7 +111,7 @@ export default function AdminLayout({
                     <div className="p-6 border-b border-gray-200">
                         <div className="flex items-center justify-between">
                             <div>
-                                <h1 className="text-xl font-bold text-gray-900">StudyAbroad Admin</h1>
+                                <h1 className="text-xl font-bold text-gray-900">BeyondBorders</h1>
                                 <p className="text-sm text-gray-600">Administration Portal</p>
                             </div>
                             <button
@@ -174,7 +174,7 @@ export default function AdminLayout({
             {/* Desktop Sidebar */}
             <div className="hidden lg:block w-64 bg-white shadow-lg">
                 <div className="p-6 border-b border-gray-200">
-                    <h1 className="text-xl font-bold text-gray-900">StudyAbroad Admin</h1>
+                    <h1 className="text-xl font-bold text-gray-900">BeyondBorders</h1>
                     <p className="text-sm text-gray-600">Administration Portal</p>
                 </div>
 

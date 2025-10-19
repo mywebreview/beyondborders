@@ -22,8 +22,8 @@ interface AdminEmailData {
 
 const getFromEmail = (country: 'UK' | 'Canada') => {
     return country === 'UK'
-        ? process.env.RESEND_FROM_UK || 'uk.admission@prodoria.com'
-        : process.env.RESEND_FROM_CA || 'canada.admission@prodoria.com';
+        ? process.env.RESEND_FROM_UK || 'uk@beyondbordersng.com'
+        : process.env.RESEND_FROM_CA || 'canada@beyondbordersng.com';
 }
 
 const studentEmailTemplate = (data: StudentEmailData) => `
@@ -110,15 +110,15 @@ const studentEmailTemplate = (data: StudentEmailData) => `
 
       <div class="contact-info">
         <strong>Need Immediate Assistance?</strong>
-        <div>📧 Email: ${data.country === 'UK' ? 'uk.admission@prodoria.com' : 'canada.admission@prodoria.com'}</div>
-        <div>🌐 Website: www.prodoria.com</div>
+        <div>📧 Email: support@beyondbordersng.com</div>
+        <div>🌐 Website: www.beyondbordersng.com</div>
       </div>
 
       <p style="font-size: 13px; color: #6b7280;">Please save this email for your records. Keep your reference safe as you may need it for future correspondence.</p>
     </div>
 
     <div class="footer">
-      <p><strong>Prodoria Education Consultancy</strong></p>
+      <p><strong>BeyondBorders Education Consultancy</strong></p>
       <p>Reference ID: <span class="reference">${data.reference}</span></p>
       <p style="margin-top: 15px; border-top: 1px solid #e5e7eb; padding-top: 15px;">This is an automated confirmation email. Please do not reply directly.</p>
     </div>
@@ -216,7 +216,7 @@ const adminEmailTemplate = (data: AdminEmailData) => `
     </div>
 
     <div class="footer">
-      <p><strong>Prodoria Education Consultancy - Admin Portal</strong></p>
+      <p><strong>BeyondBorders Education Consultancy - Admin Portal</strong></p>
       <p>This is an automated notification. Do not reply to this email.</p>
     </div>
   </div>
@@ -231,7 +231,7 @@ export async function sendStudentConfirmationEmail(data: StudentEmailData) {
         const fromEmail = getFromEmail(data.country)
 
         const result = await resend.emails.send({
-            from: `Prodoria Admissions <${fromEmail}>`,
+            from: `BeyondBorders Admissions <${fromEmail}>`,
             to: data.email,
             subject: `Application Confirmation - Reference #${data.reference}`,
             html: studentEmailTemplate(data),
@@ -255,10 +255,10 @@ export async function sendAdminNotificationEmail(data: AdminEmailData) {
         console.log('📧 Attempting to send admin email')
 
         const fromEmail = getFromEmail(data.country)
-        const adminEmail = process.env.ADMIN_EMAIL || 'prodoria@prodoria.com'
+        const adminEmail = process.env.ADMIN_EMAIL || 'info@beyondbordersng.com'
 
         const result = await resend.emails.send({
-            from: `Prodoria Admissions <${fromEmail}>`,
+            from: `BeyondBorders Admissions <${fromEmail}>`,
             to: adminEmail,
             subject: `New ${data.country} Application - ${data.reference}`,
             html: adminEmailTemplate(data),

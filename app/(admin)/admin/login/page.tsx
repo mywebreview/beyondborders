@@ -3,6 +3,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 export default function AdminLogin() {
     const [email, setEmail] = useState('')
@@ -17,7 +18,7 @@ export default function AdminLogin() {
         setError('')
 
         // Simple admin authentication (replace with secure authentication in production)
-        if (email === 'admin@studyabroad.com' && password === 'admin123') {
+        if (email === 'portalforadmin@beyondborders.com' && password === 'hardtogetpassword123!') {
             localStorage.setItem('admin_token', 'admin_authenticated')
             router.push('/admin/portal')
         } else {
@@ -31,14 +32,20 @@ export default function AdminLogin() {
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-brand-blue to-blue-900 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-md w-full space-y-8">
                 <div>
-                    <div className="mx-auto h-12 w-12 bg-white rounded-2xl flex items-center justify-center">
-                        <span className="text-brand-blue font-bold text-lg">SA</span>
+                    <div className="mx-auto h-16 w-16 bg-white rounded-2xl flex items-center justify-center">
+                        <Image
+                            src="/favicon.png"
+                            alt="Company Logo"
+                            width={40}
+                            height={40}
+                            priority
+                        />
                     </div>
                     <h2 className="mt-6 text-center text-3xl font-extrabold text-white">
                         Admin Portal
                     </h2>
                     <p className="mt-2 text-center text-sm text-blue-200">
-                        StudyAbroad Administration
+                        BeyondBorders Administration
                     </p>
                 </div>
 
@@ -86,12 +93,6 @@ export default function AdminLogin() {
                         >
                             {isLoading ? 'Signing in...' : 'Sign in'}
                         </button>
-                    </div>
-
-                    <div className="text-center">
-                        <p className="text-blue-200 text-sm">
-                            Demo credentials: admin@studyabroad.com / admin123
-                        </p>
                     </div>
                 </form>
             </div>
