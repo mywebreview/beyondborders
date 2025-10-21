@@ -11,7 +11,7 @@ module.exports = {
     		colors: {
     			brand: {
     				yellow: '#feca0d',
-    				blue: '#170e4d'
+    				blue: '#48cae4'
     			},
     			primary: {
     				DEFAULT: 'hsl(var(--primary))',

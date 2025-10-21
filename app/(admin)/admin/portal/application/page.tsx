@@ -26,6 +26,7 @@ export default function ApplicationsList() {
     const [isLoading, setIsLoading] = useState(true)
     const [filter, setFilter] = useState<string>('all')
     const [searchTerm, setSearchTerm] = useState('')
+    const [isGeneratingReport, setIsGeneratingReport] = useState(false)
 
     useEffect(() => {
         fetchApplications()
@@ -51,6 +52,112 @@ export default function ApplicationsList() {
             console.error('Error fetching applications:', error)
         } finally {
             setIsLoading(false)
+        }
+    }
+
+    const convertToCSV = (data: Application[]): string => {
+        if (data.length === 0) return ''
+        
+        const headers = ['ID', 'First Name', 'Last Name', 'Email', 'Phone', 'Destination Country', 'Proposed Course', 'Status', 'Created At']
+        const csvRows = []
+        
+        // Add headers
+        csvRows.push(headers.join(','))
+        
+        // Add data rows
+        for (const app of data) {
+            const row = [
+                app.id,
+                `"${app.first_name?.replace(/"/g, '""') || ''}"`,
+                `"${app.last_name?.replace(/"/g, '""') || ''}"`,
+                `"${app.email?.replace(/"/g, '""') || ''}"`,
+                `"${app.phone?.replace(/"/g, '""') || ''}"`,
+                `"${app.destination_country?.replace(/"/g, '""') || ''}"`,
+                `"${app.proposed_course?.replace(/"/g, '""') || ''}"`,
+                `"${app.status?.replace(/"/g, '""') || ''}"`,
+                `"${app.created_at}"`
+            ]
+            csvRows.push(row.join(','))
+        }
+        
+        return csvRows.join('\n')
+    }
+
+    const downloadCSV = (csvContent: string, filename: string) => {
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' })
+        const link = document.createElement('a')
+        const url = URL.createObjectURL(blob)
+        
+        link.setAttribute('href', url)
+        link.setAttribute('download', filename)
+        link.style.visibility = 'hidden'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        URL.revokeObjectURL(url)
+    }
+
+    const handleDownloadAllCSV = async () => {
+        try {
+            setIsGeneratingReport(true)
+            
+            // Fetch all applications without filters
+            const { data, error } = await supabase
+                .from('applications')
+                .select('*')
+                .order('created_at', { ascending: false })
+
+            if (error) throw error
+
+            const csvContent = convertToCSV(data as Application[] || [])
+            const timestamp = new Date().toISOString().split('T')[0]
+            const filename = `all-applications-${timestamp}.csv`
+            
+            downloadCSV(csvContent, filename)
+        } catch (error) {
+            console.error('Error generating report:', error)
+            alert('Error generating report. Please try again.')
+        } finally {
+            setIsGeneratingReport(false)
+        }
+    }
+
+    const handleDownloadFilteredCSV = () => {
+        try {
+            setIsGeneratingReport(true)
+            
+            const dataToExport = filter === 'all' 
+                ? applications 
+                : applications.filter(app => app.status === filter)
+            
+            const csvContent = convertToCSV(dataToExport)
+            const timestamp = new Date().toISOString().split('T')[0]
+            const statusText = filter === 'all' ? 'all' : filter
+            const filename = `${statusText}-applications-${timestamp}.csv`
+            
+            downloadCSV(csvContent, filename)
+        } catch (error) {
+            console.error('Error generating report:', error)
+            alert('Error generating report. Please try again.')
+        } finally {
+            setIsGeneratingReport(false)
+        }
+    }
+
+    const handleDownloadSearchCSV = () => {
+        try {
+            setIsGeneratingReport(true)
+            
+            const csvContent = convertToCSV(filteredApplications)
+            const timestamp = new Date().toISOString().split('T')[0]
+            const filename = `search-results-${timestamp}.csv`
+            
+            downloadCSV(csvContent, filename)
+        } catch (error) {
+            console.error('Error generating report:', error)
+            alert('Error generating report. Please try again.')
+        } finally {
+            setIsGeneratingReport(false)
         }
     }
 
@@ -119,7 +226,7 @@ export default function ApplicationsList() {
                     <h1 className="text-2xl font-bold text-gray-900">Applications</h1>
                     <p className="text-gray-600">Manage and review student applications</p>
                 </div>
-                <div className="mt-4 lg:mt-0">
+                <div className="mt-4 lg:mt-0 flex gap-3">
                     <button
                         onClick={fetchApplications}
                         className="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors font-medium inline-flex items-center gap-2"
@@ -129,6 +236,78 @@ export default function ApplicationsList() {
                         </svg>
                         Refresh
                     </button>
+                    
+                    {/* Report Buttons */}
+                    <div className="relative group">
+                        <button
+                            disabled={isGeneratingReport}
+                            className="bg-brand-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                            {isGeneratingReport ? (
+                                <>
+                                    <svg className="animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    Generating...
+                                </>
+                            ) : (
+                                <>
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                    </svg>
+                                    Download Reports
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </>
+                            )}
+                        </button>
+                        
+                        {/* Dropdown Menu */}
+                        <div className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <button
+                                onClick={handleDownloadAllCSV}
+                                disabled={applications.length === 0 || isGeneratingReport}
+                                className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                            >
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                Download All Applications ({applications.length})
+                            </button>
+                            
+                            <button
+                                onClick={handleDownloadFilteredCSV}
+                                disabled={applications.length === 0 || isGeneratingReport}
+                                className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                            >
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                Download {filter === 'all' ? 'All' : formatStatus(filter)} ({filter === 'all' ? applications.length : statusCounts[filter as keyof typeof statusCounts]})
+                            </button>
+                            
+                            {searchTerm && (
+                                <button
+                                    onClick={handleDownloadSearchCSV}
+                                    disabled={filteredApplications.length === 0 || isGeneratingReport}
+                                    className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                                >
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                    </svg>
+                                    Download Search Results ({filteredApplications.length})
+                                </button>
+                            )}
+                            
+                            <div className="border-t border-gray-200 my-1"></div>
+                            
+                            <div className="px-4 py-2 text-xs text-gray-500">
+                                Files are downloaded as CSV with timestamps
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

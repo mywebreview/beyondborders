@@ -21,16 +21,57 @@ export const addressSchema = z.object({
 
 // Step 3: Passport Details
 export const passportSchema = z.object({
-    date_of_birth: z.string().min(1, 'Date of birth is required'),
-    passport_number: z.string().min(6, 'Passport number is required'),
-    passport_issuance_date: z.string().min(1, 'Passport issuance date is required'),
-    passport_expiry_date: z.string().min(1, 'Passport expiry date is required'),
-    gender: z.enum(['male', 'female', 'other']),
-    marital_status: z.string().min(1, 'Marital status is required'),
-    nationality: z.string().min(2, 'Nationality is required'),
-    destination_country: z.enum(['UK', 'Canada']),
-    proposed_course: z.string().min(3, 'Proposed course of study is required'),
-})
+  date_of_birth: z.string().min(1, "Date of birth is required"),
+  passport_number: z.string()
+    .min(1, "Passport number is required")
+    .regex(/^[A-Z0-9]{6,12}$/, "Passport number must be 6-12 alphanumeric characters"),
+  passport_issuance_date: z.string().min(1, "Passport issuance date is required"),
+  passport_expiry_date: z.string().min(1, "Passport expiry date is required"),
+  gender: z.enum(['male', 'female', 'other'], {
+    required_error: "Gender is required",
+  }),
+  marital_status: z.string().min(1, "Marital status is required"),
+  nationality: z.string().min(1, "Nationality is required"),
+  destination_country: z.enum(['UK', 'Canada'], {
+    required_error: "Destination country is required",
+  }),
+  proposed_course: z.string().min(1, "Proposed course is required"),
+}).refine((data) => {
+  // Validate that issuance date is before expiry date
+  const issuance = new Date(data.passport_issuance_date);
+  const expiry = new Date(data.passport_expiry_date);
+  return issuance < expiry;
+}, {
+  message: "Passport issuance date must be before expiry date",
+  path: ["passport_issuance_date"],
+}).refine((data) => {
+  // Validate that passport is valid for at least 6 months from today
+  const expiry = new Date(data.passport_expiry_date);
+  const sixMonthsFromNow = new Date();
+  sixMonthsFromNow.setMonth(sixMonthsFromNow.getMonth() + 6);
+  return expiry > sixMonthsFromNow;
+}, {
+  message: "Passport must be valid for at least 6 months from today",
+  path: ["passport_expiry_date"],
+}).refine((data) => {
+  // Validate that issuance date is after birth date
+  const birthDate = new Date(data.date_of_birth);
+  const issuance = new Date(data.passport_issuance_date);
+  return issuance > birthDate;
+}, {
+  message: "Passport issuance date must be after date of birth",
+  path: ["passport_issuance_date"],
+}).refine((data) => {
+  // Validate that user is at least 16 years old for international study
+  const birthDate = new Date(data.date_of_birth);
+  const sixteenYearsAgo = new Date();
+  sixteenYearsAgo.setFullYear(sixteenYearsAgo.getFullYear() - 16);
+  return birthDate <= sixteenYearsAgo;
+}, {
+  message: "You must be at least 16 years old to apply",
+  path: ["date_of_birth"],
+});
+
 
 // Step 4: Travel History
 export const travelHistorySchema = z.object({
