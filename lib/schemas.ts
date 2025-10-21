@@ -27,14 +27,10 @@ export const passportSchema = z.object({
     .regex(/^[A-Z0-9]{6,12}$/, "Passport number must be 6-12 alphanumeric characters"),
   passport_issuance_date: z.string().min(1, "Passport issuance date is required"),
   passport_expiry_date: z.string().min(1, "Passport expiry date is required"),
-  gender: z.enum(['male', 'female', 'other'], {
-    required_error: "Gender is required",
-  }),
+  gender: z.enum(['male', 'female', 'other']).describe("Gender is required"),
   marital_status: z.string().min(1, "Marital status is required"),
   nationality: z.string().min(1, "Nationality is required"),
-  destination_country: z.enum(['UK', 'Canada'], {
-    required_error: "Destination country is required",
-  }),
+  destination_country: z.enum(['UK', 'Canada']).describe('Destination country is required'),
   proposed_course: z.string().min(1, "Proposed course is required"),
 }).refine((data) => {
   // Validate that issuance date is before expiry date
