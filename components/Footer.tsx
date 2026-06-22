@@ -160,8 +160,8 @@ export default function Footer() {
                   </svg>
                 </div>
                 <div>
-                  <a href="mailto:info@BeyondBorders.com" className="text-gray-300 hover:text-white transition-colors">
-                    info@BeyondBorders.com
+                  <a href="mailto:info@beyondbordersng.com" className="text-gray-300 hover:text-white transition-colors">
+                    info@beyondbordersng.com
                   </a>
                 </div>
               </div>
