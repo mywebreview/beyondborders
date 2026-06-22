@@ -182,7 +182,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center bg-white rounded-2xl p-8 shadow-lg">
               <div className="w-24 h-24 bg-gradient-to-br from-brand-blue to-blue-800 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                FA
+                FM
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Fasan Michael</h3>
               <p className="text-brand-blue font-semibold mb-4">Founder & CEO</p>
