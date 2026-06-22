@@ -182,9 +182,9 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center bg-white rounded-2xl p-8 shadow-lg">
               <div className="w-24 h-24 bg-gradient-to-br from-brand-blue to-blue-800 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                AA
+                FA
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Fasan Micheal</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Fasan Michael</h3>
               <p className="text-brand-blue font-semibold mb-4">Founder & CEO</p>
               <p className="text-gray-600 text-sm">
                 Professional International Education Consultant with over 10 years of experience guiding students through admissions and visa processes, with more than 800 successful visa approvals across multiple study destinations.
