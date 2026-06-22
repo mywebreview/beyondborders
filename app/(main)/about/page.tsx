@@ -69,7 +69,7 @@ export default function About() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
             <p className="text-xl text-gray-600">
-              From humble beginnings to becoming Nigeria's trusted study abroad partner
+              BeyondBorders was built on years of international education experience to help students and families navigate admissions and study visas with expert guidance.
             </p>
           </div>
 
@@ -77,13 +77,6 @@ export default function About() {
             <div className="space-y-6">
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">The Beginning</h3>
-                <p className="text-gray-700 leading-relaxed">
-                  Founded in 2018  by a group of international education enthusiasts, BeyondBorders started with a simple mission: to make quality international education accessible to Nigerian students.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-2xl p-6 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Growth & Impact</h3>
                 <p className="text-gray-700 leading-relaxed">
                   BeyondBorders was built from years of hands-on experience in international education and a deep understanding of the challenges students face when pursuing opportunities abroad.
                 </p>
