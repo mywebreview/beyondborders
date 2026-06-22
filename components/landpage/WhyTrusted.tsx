@@ -62,7 +62,7 @@ export default function WhyTrusted() {
                         {/* Trust Metrics */}
                         <div className="grid grid-cols-2 gap-6">
                             <TrustMetric
-                                number="5,000+"
+                                number="300+"
                                 label="Successful Students"
                                 description="Nigerian students placed in top universities"
                                 delay="200"
@@ -161,7 +161,7 @@ export default function WhyTrusted() {
                             icon={<SuccessIcon />}
                             title="Proven Success"
                             description="Our track record speaks for itself - thousands of successful placements with life-changing outcomes."
-                            stats="5,000+ Success Stories"
+                            stats="300+ Success Stories"
                             delay="500"
                         />
                     </div>

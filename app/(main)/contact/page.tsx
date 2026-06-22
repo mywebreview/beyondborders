@@ -171,8 +171,8 @@ export default function Contact() {
 
                 {submitMessage && (
                   <div className={`p-4 rounded-lg ${submitMessage.includes('Thank you')
-                      ? 'bg-green-100 text-green-700 border border-green-200'
-                      : 'bg-red-100 text-red-700 border border-red-200'
+                    ? 'bg-green-100 text-green-700 border border-green-200'
+                    : 'bg-red-100 text-red-700 border border-red-200'
                     }`}>
                     {submitMessage}
                   </div>
@@ -211,9 +211,9 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600">info@beyondborders.com</p>
-                    <p className="text-gray-600 text-sm mt-1">UK Programs: admissions.uk@beyondborders.com</p>
-                    <p className="text-gray-600 text-sm">Canada Programs: admissions.ca@beyondborders.com</p>
+                    <p className="text-gray-600">info@beyondbordersng.com</p>
+                    <p className="text-gray-600 text-sm mt-1">UK Programs: admissions.uk@beyondbordersng.com</p>
+                    <p className="text-gray-600 text-sm">Canada Programs: admissions.ca@beyondbordersng.com</p>
                   </div>
                 </div>
 
@@ -281,7 +281,7 @@ export default function Contact() {
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-brand-yellow rounded-full"></div>
-                      5,000+ Successful Students
+                      300+ Successful Students
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-brand-yellow rounded-full"></div>

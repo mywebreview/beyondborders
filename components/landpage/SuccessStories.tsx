@@ -185,7 +185,7 @@ export default function SuccessStories() {
                             data-aos="fade-up"
                             data-aos-delay="400"
                         >
-                            <div className="text-3xl font-bold text-brand-blue mb-2">5,000+</div>
+                            <div className="text-3xl font-bold text-brand-blue mb-2">300+</div>
                             <div className="text-gray-600">Students Placed</div>
                         </div>
                         <div
