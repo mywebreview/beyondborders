@@ -15,7 +15,7 @@ export default function Footer() {
               alt="Company Logo"
               width={120}
               height={40}
-              priority 
+              priority
             />
 
             <p className="text-gray-300 mb-6 leading-relaxed">
@@ -132,7 +132,11 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-gray-300 font-medium">Lagos Office</p>
-                  <p className="text-gray-400 text-sm">123 Education Road, Ikeja, Lagos, Nigeria</p>
+                  <p className="text-gray-400 text-sm">280, Ijesha road Surulere (Near Kestone bank)</p>
+                </div>
+                <div>
+                  <p className="text-gray-300 font-medium">Ilorin Office</p>
+                  <p className="text-gray-400 text-sm">5, Peace Street , Awolowo, Ilorin</p>
                 </div>
               </div>
 
@@ -144,7 +148,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <a href="tel:+2348001234567" className="text-gray-300 hover:text-white transition-colors">
-                    +234 800 123 4567
+                    +234 7058888840 | +234 8037053212
                   </a>
                 </div>
               </div>

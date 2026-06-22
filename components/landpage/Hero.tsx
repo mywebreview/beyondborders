@@ -21,7 +21,7 @@ export default function Hero() {
                 <div className="text-center lg:text-left space-y-8">
                     <div className="inline-flex items-center gap-2 bg-blue-50/80 backdrop-blur-sm rounded-full px-4 py-2 border border-blue-200 shadow-sm animate-fade-in">
                         <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                        <span className="text-foreground text-sm font-medium">Trusted by 5,000+ Nigerian Students</span>
+                        <span className="text-foreground text-sm font-medium">Trusted by 300+ Nigerian Students</span>
                     </div>
 
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight animate-slide-up">
@@ -44,7 +44,7 @@ export default function Hero() {
                             <div className="text-muted-foreground text-sm">Partner Universities</div>
                         </div>
                         <div className="text-center transform hover:scale-110 transition-transform duration-300">
-                            <div className="text-3xl font-bold text-primary animate-count-up delay-500">15+</div>
+                            <div className="text-3xl font-bold text-primary animate-count-up delay-500">8+</div>
                             <div className="text-muted-foreground text-sm">Years Experience</div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@ export default function Hero() {
                                     ></div>
                                 ))}
                             </div>
-                            <span>Join 5,000+ Successful Students</span>
+                            <span>Join 300+ Successful Students</span>
                         </div>
                     </div>
                 </div>

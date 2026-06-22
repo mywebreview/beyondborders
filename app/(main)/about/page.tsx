@@ -44,10 +44,10 @@ export default function About() {
 
             <div className="relative">
               <div className="bg-gradient-to-br from-brand-blue to-blue-800 rounded-3xl p-8 text-white">
-                <div className="text-6xl font-bold text-brand-yellow mb-4">15+</div>
+                <div className="text-6xl font-bold text-brand-yellow mb-4">8+</div>
                 <h3 className="text-2xl font-bold mb-4">Years of Excellence</h3>
                 <p className="text-blue-100 leading-relaxed">
-                  For over 15 years, we've been dedicated to helping Nigerian students navigate the complex journey of international education with confidence and success.
+                  For over 8 years, we've been dedicated to helping Nigerian students navigate the complex journey of international education with confidence and success.
                 </p>
               </div>
 
@@ -78,7 +78,7 @@ export default function About() {
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">The Beginning</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Founded in 2008 by a group of international education enthusiasts, BeyondBorders started with a simple mission: to make quality international education accessible to Nigerian students.
+                  Founded in 2018  by a group of international education enthusiasts, BeyondBorders started with a simple mission: to make quality international education accessible to Nigerian students.
                 </p>
               </div>
 
@@ -99,7 +99,7 @@ export default function About() {
 
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-gradient-to-br from-brand-blue to-blue-800 rounded-2xl p-6 text-white text-center">
-                <div className="text-3xl font-bold text-brand-yellow mb-2">5,000+</div>
+                <div className="text-3xl font-bold text-brand-yellow mb-2">300+</div>
                 <div className="text-blue-100">Students Placed</div>
               </div>
               <div className="bg-gradient-to-br from-brand-yellow to-yellow-400 rounded-2xl p-6 text-brand-blue text-center">
@@ -111,7 +111,7 @@ export default function About() {
                 <div>Partner Universities</div>
               </div>
               <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-6 text-white text-center">
-                <div className="text-3xl font-bold mb-2">15+</div>
+                <div className="text-3xl font-bold mb-2">8+</div>
                 <div>Years Experience</div>
               </div>
             </div>
@@ -187,29 +187,29 @@ export default function About() {
               <h3 className="text-xl font-bold text-gray-900 mb-2">Fasan Micheal</h3>
               <p className="text-brand-blue font-semibold mb-4">Founder & CEO</p>
               <p className="text-gray-600 text-sm">
-                Former international student with 15+ years experience in international education consultancy.
+                Professional International Education Consultant with over 10 years of experience guiding students through admissions and visa processes, with more than 800 successful visa approvals across multiple study destinations.
               </p>
             </div>
 
             <div className="text-center bg-white rounded-2xl p-8 shadow-lg">
               <div className="w-24 h-24 bg-gradient-to-br from-brand-yellow to-yellow-400 rounded-full flex items-center justify-center text-brand-blue text-2xl font-bold mx-auto mb-4">
-                CF
+                DA
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Chioma Franklin</h3>
-              <p className="text-brand-blue font-semibold mb-4">Head of UK Admissions</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Deji Adeyemi</h3>
+              <p className="text-brand-blue font-semibold mb-4">Admissions Officer</p>
               <p className="text-gray-600 text-sm">
-                UK education specialist with expertise in Russell Group university applications.
+                Specializes in application processing, document review, and university placement coordination, ensuring students meet institutional requirements accurately and on time.
               </p>
             </div>
 
             <div className="text-center bg-white rounded-2xl p-8 shadow-lg">
               <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                KO
+                FV
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Kunle Okafor</h3>
-              <p className="text-brand-blue font-semibold mb-4">Head of Canada Admissions</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Faith Victoria</h3>
+              <p className="text-brand-blue font-semibold mb-4">Visa Support Specialist</p>
               <p className="text-gray-600 text-sm">
-                Canadian immigration consultant with deep knowledge of study permit processes.
+                Handles visa documentation, compliance checks, and application guidance to help students prepare strong and complete submissions.
               </p>
             </div>
           </div>
