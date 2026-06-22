@@ -12,7 +12,7 @@ export default function About() {
               About BeyondBorders
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
-              Your trusted partner in transforming study abroad dreams into successful realities for Nigerian students since 2008.
+              Your trusted partner in transforming study abroad dreams into successful realities for Nigerian students since 2018.
             </p>
           </div>
         </div>
@@ -30,13 +30,13 @@ export default function About() {
                 <div className="bg-blue-50 rounded-2xl p-6 border-l-4 border-brand-yellow">
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Our Mission</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    To empower Nigerian students with access to world-class education in the UK and Canada through expert guidance, personalized support, and unwavering commitment to their success.
+                    To help students secure international education opportunities through structured guidance, accurate documentation, and strategic application support.
                   </p>
                 </div>
                 <div className="bg-yellow-50 rounded-2xl p-6 border-l-4 border-brand-blue">
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Our Vision</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    To be Nigeria's most trusted study abroad consultancy, recognized for transforming lives through education and building bridges to global opportunities.
+                    To become a trusted bridge between students and global education opportunities, known for integrity, precision, and consistent results.
                   </p>
                 </div>
               </div>
@@ -85,7 +85,7 @@ export default function About() {
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Growth & Impact</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Over the years, we've grown from a small team to a comprehensive consultancy, helping over 5,000 students achieve their dreams of studying in the UK and Canada.
+                  Over the years, we've grown from a small team to a comprehensive consultancy, helping over 300 students achieve their dreams of studying in the UK and Canada.
                 </p>
               </div>
 

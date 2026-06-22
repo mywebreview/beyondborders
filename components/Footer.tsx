@@ -19,7 +19,7 @@ export default function Footer() {
             />
 
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Your trusted partner for international education. Helping Nigerian students achieve their dreams of studying in the UK and Canada since 2008.
+              Your trusted partner for international education. Helping Nigerian students achieve their dreams of studying in the UK and Canada since 2018.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-brand-yellow hover:text-brand-blue transition-all duration-300">
