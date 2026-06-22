@@ -50,7 +50,7 @@ export default function WhyTrusted() {
                         data-aos="fade-up"
                         data-aos-delay="300"
                     >
-                        With over 15 years of dedicated service, we've perfected the art of transforming
+                        With over 8 years of dedicated service, we've perfected the art of transforming
                         study abroad dreams into successful realities for Nigerian students.
                     </p>
                 </div>
@@ -81,7 +81,7 @@ export default function WhyTrusted() {
                                 delay="400"
                             />
                             <TrustMetric
-                                number="15+"
+                                number="8+"
                                 label="Years Experience"
                                 description="Dedicated to Nigerian students' success"
                                 delay="500"
