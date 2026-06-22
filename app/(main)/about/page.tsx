@@ -85,14 +85,14 @@ export default function About() {
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Growth & Impact</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Over the years, we've grown from a small team to a comprehensive consultancy, helping over 300 students achieve their dreams of studying in the UK and Canada.
+                  BeyondBorders was built from years of hands-on experience in international education and a deep understanding of the challenges students face when pursuing opportunities abroad.
                 </p>
               </div>
 
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Today & Beyond</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Today, we continue to innovate and expand our services, maintaining our commitment to excellence and student success in an ever-changing global education landscape.
+                  BeyondBorders was created to provide students and families with expert guidance, strategic support, and a structured pathway through international admissions and study visa processes.
                 </p>
               </div>
             </div>
