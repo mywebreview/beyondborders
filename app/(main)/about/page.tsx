@@ -184,7 +184,7 @@ export default function About() {
               <div className="w-24 h-24 bg-gradient-to-br from-brand-blue to-blue-800 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
                 AA
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Adebayo Adewale</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Fasan Micheal</h3>
               <p className="text-brand-blue font-semibold mb-4">Founder & CEO</p>
               <p className="text-gray-600 text-sm">
                 Former international student with 15+ years experience in international education consultancy.
