@@ -225,7 +225,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg text-gray-900 mb-1">Phone</h3>
-                    <p className="text-gray-600">+234 901 234 5678</p>
+                    <p className="text-gray-600">+234 7058888840 | +234 8037053212</p>
                     <p className="text-gray-600 text-sm mt-1">Monday - Friday: 8:00 AM - 6:00 PM</p>
                     <p className="text-gray-600 text-sm">Saturday: 9:00 AM - 4:00 PM</p>
                   </div>
@@ -241,12 +241,12 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-lg text-gray-900 mb-1">Office Locations</h3>
                     <p className="text-gray-600 font-medium">Lagos Office</p>
-                    <p className="text-gray-600">123 Victoria Island</p>
+                    <p className="text-gray-600">280, Ijesha road Surulere</p>
                     <p className="text-gray-600">Lagos, Nigeria</p>
 
-                    <p className="text-gray-600 font-medium mt-3">Abuja Office</p>
-                    <p className="text-gray-600">456 Central Business District</p>
-                    <p className="text-gray-600">Abuja, Nigeria</p>
+                    <p className="text-gray-600 font-medium mt-3">Ilorin Office</p>
+                    <p className="text-gray-600">5, Peace Street , Awolowo,</p>
+                    <p className="text-gray-600">Ilorin, Nigeria</p>
                   </div>
                 </div>
 
@@ -269,11 +269,11 @@ export default function Contact() {
                 </div>
 
                 <div className="bg-gray-50 p-6 rounded-2xl">
-                  <h3 className="font-semibold text-lg text-gray-900 mb-3">Why Choose Beyond Borders?</h3>
+                  <h3 className="font-semibold text-lg text-gray-900 mb-3">Why Choose BeyondBorders?</h3>
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-brand-yellow rounded-full"></div>
-                      15+ Years Experience
+                      8+ Years Experience
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-brand-yellow rounded-full"></div>
