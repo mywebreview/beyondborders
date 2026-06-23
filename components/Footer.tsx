@@ -98,24 +98,6 @@ export default function Footer() {
                   Study in Canada
                 </Link>
               </li>
-              <li>
-                <Link href="/scholarships" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center gap-2">
-                  <div className="w-1 h-1 bg-brand-yellow rounded-full"></div>
-                  Scholarships
-                </Link>
-              </li>
-              <li>
-                <Link href="/visa-assistance" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center gap-2">
-                  <div className="w-1 h-1 bg-brand-yellow rounded-full"></div>
-                  Visa Assistance
-                </Link>
-              </li>
-              <li>
-                <Link href="/testimonials" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center gap-2">
-                  <div className="w-1 h-1 bg-brand-yellow rounded-full"></div>
-                  Success Stories
-                </Link>
-              </li>
             </ul>
           </div>
 

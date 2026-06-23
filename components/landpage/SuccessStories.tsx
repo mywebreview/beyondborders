@@ -63,10 +63,10 @@ export default function SuccessStories() {
                         <div className="p-6">
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                                    CA
+                                    HY
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-gray-900 text-lg">Chiamaka Adebayo</h3>
+                                    <h3 className="font-bold text-gray-900 text-lg">Habiba Yusuf B.</h3>
                                     <p className="text-brand-blue font-semibold">University of Toronto</p>
                                 </div>
                             </div>
@@ -106,10 +106,10 @@ export default function SuccessStories() {
                         <div className="p-6">
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                                    AO
+                                    OB
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-gray-900 text-lg">Adeola Okafor</h3>
+                                    <h3 className="font-bold text-gray-900 text-lg">Olusesi B.</h3>
                                     <p className="text-brand-blue font-semibold">University of Manchester</p>
                                 </div>
                             </div>
@@ -149,10 +149,10 @@ export default function SuccessStories() {
                         <div className="p-6">
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                                    KE
+                                    AO
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-gray-900 text-lg">Kunle Eze</h3>
+                                    <h3 className="font-bold text-gray-900 text-lg">Ajarat Olabanji B</h3>
                                     <p className="text-brand-blue font-semibold">University of British Columbia</p>
                                 </div>
                             </div>
